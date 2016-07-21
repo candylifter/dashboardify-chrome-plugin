@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 
     chrome.tabs.getSelected(null, function(tab) {
-      chrome.tabs.executeScript(null, {
-        file: 'getXPath.js'
+      chrome.tabs.executeScript({
+        code: 'highlightDOMElements()'
       });
     });
 

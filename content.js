@@ -2,6 +2,7 @@ const HIGHLIGHT_CLASSNAME = 'dashboardify-highlight';
 
 function disableEvents(callback) {}
 
+//Returns XPath to element
 function getPathTo(element) {
     if (element.tagName == 'HTML')
         return '/HTML[1]';
@@ -21,6 +22,8 @@ function getPathTo(element) {
 
 function alertXPath() {
   alert(getPathTo(this));
+
+  //Remove highlight and event listener from clicked element
   this.classList.remove(HIGHLIGHT_CLASSNAME);
   this.removeEventListener('click', alertXPath);
   document.body.onmouseover = undefined;
@@ -35,6 +38,7 @@ function highlightDOMElements() {
     if (event.target === document.body || (prev && prev === event.target)) {
       return;
     }
+    
     if (prev) {
       prev.removeEventListener('click', alertXPath);
 
