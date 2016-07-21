@@ -1,7 +1,4 @@
-function disableEvents(callback) {
-
-
-}
+function disableEvents(callback) {}
 
 function getPathTo(element) {
     if (element.tagName == 'HTML')
@@ -22,6 +19,9 @@ function getPathTo(element) {
 
 function alertXPath() {
   alert(getPathTo(this));
+  this.classList.remove('highlight');
+  this.removeEventListener('click', alertXPath);
+  document.body.onmouseover = undefined;
 }
 
 function highlightDOMElements() {
