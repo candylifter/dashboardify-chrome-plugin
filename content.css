@@ -1,4 +1,6 @@
-.highlight {
-  background-color: rgba(239,201,76,.5) !important;
+.dashboardify-highlight {
+  cursor: crosshair !important;
+  background-image: none !important;
+  background-color: rgba(239,201,76,.3) !important;
   transition: .1s ease-out;
 }
